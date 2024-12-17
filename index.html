@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico de Animales - Universidad Politécnica Estatal del Carchi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <h1>Diagnóstico de Animales</h1>
+        <p>Selecciona un tipo de animal y un tratamiento para obtener recomendaciones sobre manejo y salud.</p>
+    </header>
+
+    <!-- Contenedor principal para el formulario -->
+    <main>
+        <form id="diagnostic-form">
+            <!-- Selección del tipo de animal -->
+            <label for="categoria">Tipo de Animal:</label>
+            <select id="categoria" name="categoria">
+                <option value="">Selecciona un tipo</option>
+                <option value="bovinos">Bovinos</option>
+                <option value="porcinos">Porcinos</option>
+                <option value="aves">Aves</option>
+                <option value="caprinos">Caprinos</option>
+                <option value="ovinos">Ovinos</option>
+            </select>
+
+            <!-- Selección del tratamiento -->
+            <label for="parametro">Tipo de Tratamiento:</label>
+            <select id="parametro" name="parametro" disabled>
+                <option value="">Selecciona un tratamiento</option>
+            </select>
+
+            <!-- Botón de enviar -->
+            <button type="submit">Ver Diagnóstico</button>
+        </form>
+
+        <!-- Div donde se mostrará el diagnóstico -->
+        <div id="diagnostico" style="display: none;"></div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Universidad Politécnica Estatal del Carchi - Diagnóstico de Animales</p>
+    </footer>
+
+    <!-- Vinculación con el archivo JavaScript -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
